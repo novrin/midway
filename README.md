@@ -50,7 +50,6 @@ func main() {
 	// Use Stack to arrange middleware to execute corsHeaders first.
 	stacked := midway.Stack(corsHeaders, secureHeaders)
 
-
 	app := http.HandlerFunc(hello)
 	http.ListenAndServe(":1313", stacked(app))
     // serves corsHeaders(secureHeaders(app))
