@@ -31,7 +31,7 @@ func main() {
 
 	app := http.HandlerFunc(hello)
 	http.ListenAndServe(":1313", queued(app))
-    // serves secureHeaders(corsHeaders(app))
+	// serves secureHeaders(corsHeaders(app))
 }
 ```
 
@@ -52,7 +52,7 @@ func main() {
 
 	app := http.HandlerFunc(hello)
 	http.ListenAndServe(":1313", stacked(app))
-    // serves corsHeaders(secureHeaders(app))
+	// serves corsHeaders(secureHeaders(app))
 }
 ```
 
